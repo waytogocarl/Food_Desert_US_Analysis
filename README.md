@@ -13,9 +13,10 @@ Once data was cleaned and a primary key of County, State was added to the file a
 
 
 **Visualization 1: Population Heatmap and % Low-Access**
-This visualization was created in Javascript using Leaflet and D3. The file converts the data from CSV into JSON such that the GeoJSON functionality can take the latitude and longitude data and apply it to the Open City Data map. We applied iterative color markers to each county to help surface counties with the highest populations; Interactivity features include a mouse hover, which supplies each states' population and % Low Access _(those who live more than 1 mile from a supermarket in an urban area and more than 10 miles from a supermarket in rural areas)._
-An example of a low-access county is highlighted below, where nearly 25% of residents are considered to be living in a "food desert". 
+  - This visualization was created in Javascript using Leaflet and D3. The file converts the data from CSV into JSON such that the GeoJSON functionality can take the latitude and longitude data and apply it to the Open City Data map. 
+  - We applied iterative color markers to each county to help surface counties with the highest populations; Interactivity features include a mouse hover, which supplies each states' population and % Low Access _(those who live more than 1 mile from a supermarket in an urban area and more than 10 miles from a supermarket in rural areas)._
+  - An example of a low-access county is highlighted below, where nearly 25% of residents are considered to be living in a "food desert". 
 Another interactive function is a dropdown menu, which allows users to focus on a specific state of interest, rather than the total US.
-**Business Application:** nationwide supermarket brands can use this map as an interactive reference to make informed decisions as to where they should build, focusing on US counties that have a high share of % Low Access
+  - **Business Application:** nationwide supermarket brands can use this map as an interactive reference to make informed decisions as to where they should build, focusing on US counties that have a high share of % Low Access
 
 ![image](https://github.com/user-attachments/assets/4b3a63f2-9bac-4881-b7eb-4e5177567cfc)
