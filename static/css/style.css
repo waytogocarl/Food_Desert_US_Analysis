@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -5,8 +9,10 @@ body {
   
   .container .col-md-12 {
     width: 100%;
-    padding: 1;
-    padding-bottom: .5rem;
+    padding: 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .p-5 {
@@ -24,23 +30,26 @@ body {
   h1 {
     font-family: Verdana;
     font-size: 2.5rem;
+    padding-top: 10px;
   }
   
   p {
     font-family: Verdana;
     font-size: 1.2rem;
-    padding-top: 1rem;
   }
   
   .link-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 150px;
+    gap: 100px;
     margin: 10px 0;
+    width: 100%;
     
   }
   
   .link-container a {
+    display: flex;
     text-decoration: none;
     font-family: Courier;
     color: #000000;
@@ -54,10 +63,20 @@ body {
     text-decoration-color: #b1bafa;
   }
   
-  #visual1,
-  body,
-  html {
-    height: 100%;
+  #map {
+    width: 80%;
+    height: 600px;
+    margin: auto
+  }
+
+  #stateFilter {
+    margin: 10px;
+    padding: 5px;
+  }
+
+  .filter-container {
+    text-align: center;
+    margin-top: 10px;
   }
   
   #visual2,

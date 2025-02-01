@@ -34,17 +34,10 @@
       </div>
     </div>
     <br>
-    <div class="col-md-9">
-      <div id="visual1" class="visual"></div>
-      <div id="visual2" class="visual"></div>
-      <div id="visual3" class="visual"></div>
-      <div id="visual4" class="visual"></div>
-      <div id="visual5" class="visual"></div>
-    </div>
-    <div class="row">
+       <div class="row">
       <div class="col-md-12 text-center">
         <div class="link-container">
-          <a href="#visual1">Visual 1</a>
+          <a href="#map">Visual 1</a>
           <a href="#visual2">Visual 2</a>
           <a href="#visual3">Visual 3</a>
           <a href="#visual4">Visual 4</a>
@@ -52,12 +45,32 @@
         </div>
       </div>
     </div>
+    <br>
+    <div class="col-md-9">
+      <div id="map" class="visual"></div>
+
+      <!--Add  the State Filter here -->
+      <div class="filter-container">
+        <label for="stateFilter">Filter by State:</label>
+        <select id="stateFilter">
+          <option value="all">All States</option>
+        </select>
+      </div>
+
+      <div id="visual2" class="visual"></div>
+      <div id="visual3" class="visual"></div>
+      <div id="visual4" class="visual"></div>
+      <div id="visual5" class="visual"></div>
+    </div>
   </div>
+  
+  <br>
   
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script src="static/js/app.js"></script>
+<!-- Include multiple JavaScript files -->
+<script src="static/js/logic_vis1.js"></script>
 <script type="text/javascript" src="static/js/heatmap.js"></script>
   
 </body>
