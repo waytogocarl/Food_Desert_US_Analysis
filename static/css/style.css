@@ -54,6 +54,7 @@ body {
     font-family: Courier;
     color: #000000;
     font-size: 1rem;
+    margin-bottom: 50px;
   }
   
   .link-container a:hover {
@@ -62,6 +63,12 @@ body {
     text-decoration-thickness: 0.1rem;
     text-decoration-color: #b1bafa;
   }
+
+  .visual-container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
   
   #map {
     width: 80%;
@@ -76,13 +83,13 @@ body {
 
   .filter-container {
     text-align: center;
-    margin-top: 10px;
+    margin-bottom: 50px;
   }
   
-  #visual2,
-  body,
-  html {
-    height: 100%;
+  #map2 {
+    height: 600px;
+    width: 80%;
+    margin: auto
   }
   
   #visual3,
@@ -103,4 +110,26 @@ body {
     height: 100%;
   }
   
+
+  .scroll-to-top {
+    position: fixed; /* Fixed position */
+    bottom: 30px; /* Distance from the bottom */
+    right: 30px; /* Distance from the right */
+    background-color: #b1bafa; /* Background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 50%; /* Circular shape */
+    width: 50px; /* Width */
+    height: 50px; /* Height */
+    text-align: center; /* Center text */
+    line-height: 50px; /* Center text vertically */
+    font-size: 24px; /* Font size */
+    display: none; /* Hidden by default */
+    z-index: 1000; /* Above other elements */
+    transition: background-color 0.3s; /* Transition effect */
+  }
+  
+  .scroll-to-top:hover {
+    background-color: #000000; /* Darker background on hover */
+  }
   

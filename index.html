@@ -10,13 +10,19 @@
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
+  
   <!-- Leaflet JavaScript code -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Leaflet heatmap plugin-->
   <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
 
+  <!-- Include Bokeh CSS -->
+  <link href="https://cdn.bokeh.org/bokeh/release/bokeh-3.1.1.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Include Bokeh JS -->
+  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.1.1.min.js"></script>
+  
   <!-- D3 library -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
 
@@ -38,10 +44,10 @@
       <div class="col-md-12 text-center">
         <div class="link-container">
           <a href="#map">Visual 1</a>
-          <a href="#visual2">Visual 2</a>
-          <a href="#visual3">Visual 3</a>
-          <a href="#visual4">Visual 4</a>
-          <a href="#visual5">Visual 5</a>
+          <a href="#map2">Visual 2</a>
+          <a href="#map3">Visual 3</a>
+          <a href="#map4">Visual 4</a>
+          <!-- <a href="#visual5">Visual 5</a> -->
         </div>
       </div>
     </div>
@@ -57,10 +63,17 @@
         </select>
       </div>
 
-      <div id="visual2" class="visual"></div>
-      <div id="visual3" class="visual"></div>
-      <div id="visual4" class="visual"></div>
-      <div id="visual5" class="visual"></div>
+      <div class="visual-container">
+        <div id="map2" class="visual"></div>
+      </div>
+      
+      <div class="visual-container">
+        <div id="map3" class="visual"></div>
+      </div>
+
+      
+      <div id="map4" class="visual"></div>
+      <!-- <div id="visual5" class="visual"></div> -->
     </div>
   </div>
   
@@ -71,9 +84,34 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <!-- Include multiple JavaScript files -->
 <script src="static/js/logic_vis1.js"></script>
-<script type="text/javascript" src="static/js/heatmap.js"></script>
+<script src="static/js/logic_vis2_toni.js"></script>
+<!-- <script src="static/js/logic_vis3.js"></script> -->
+<!-- <script src="static/js/logic_vis4.js"></script> -->
+<!-- <script src="static/js/logic_vis5.js"></script> -->
+<!-- <script type="text/javascript" src="static/js/heatmap.js"></script> -->
   
 </body>
+
+<a href="#" id="scrollToTop" class="scroll-to-top" title="Scroll to Top">&#8679;</a>
+<script>
+  // Get the button
+  const scrollToTopButton = document.getElementById("scrollToTop");
+
+  // Show the button when the user scrolls down 100px from the top of the document
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollToTopButton.style.display = "block";
+    } else {
+      scrollToTopButton.style.display = "none";
+    }
+  };
+
+  // When the user clicks on the button, scroll to the top of the document
+  scrollToTopButton.onclick = function() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  };
+</script>
 
 </html>
   
