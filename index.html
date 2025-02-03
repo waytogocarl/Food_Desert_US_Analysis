@@ -53,7 +53,10 @@
     </div>
     <br>
     <div class="col-md-9">
-      <div id="map" class="visual"></div>
+      <div class="visual-container title-above small-margin">
+        <h2>Title for Visual 1</h2>
+        <div id="map" class="visual"></div>
+      </div>
 
       <!--Add  the State Filter here -->
       <div class="filter-container">
@@ -63,16 +66,22 @@
         </select>
       </div>
 
-      <div class="visual-container">
+      <div class="visual-container title-above">
+        <h2>Title for Visual 2</h2>
         <div id="map2" class="visual"></div>
       </div>
       
-      <div class="visual-container">
-        <div id="map3" class="visual"></div>
+      <div class="visual-container" id="map3">
+        <iframe src="interactive_food_access_by_race.html" width="550px" height="550px"></iframe>
+        <iframe src="interactive_food_access_by_race_1M.html" width="550px" height="550px"></iframe>
+        <iframe src="interactive_food_access_by_race_10M.html" width="550px" height="550px"></iframe>
       </div>
-
       
-      <div id="map4" class="visual"></div>
+      <div class="visual-container title-above">
+        <h2>Title for Visual 4</h2>
+        <div id="map4" class="visual"></div>
+      </div>
+      
       <!-- <div id="visual5" class="visual"></div> -->
     </div>
   </div>
@@ -86,7 +95,7 @@
 <script src="static/js/logic_vis1.js"></script>
 <script src="static/js/logic_vis2_toni.js"></script>
 <!-- <script src="static/js/logic_vis3.js"></script> -->
-<!-- <script src="static/js/logic_vis4.js"></script> -->
+<script src="static/js/logic_vis4.js"></script>
 <!-- <script src="static/js/logic_vis5.js"></script> -->
 <!-- <script type="text/javascript" src="static/js/heatmap.js"></script> -->
   

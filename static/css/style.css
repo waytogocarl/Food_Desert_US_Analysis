@@ -12,6 +12,8 @@ body {
     padding: 10px 10px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
   
@@ -65,10 +67,31 @@ body {
   }
 
   .visual-container {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
   }
 
+  .title-above {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .visual-container h2 {
+    font-family: Verdana;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
   
   #map {
     width: 80%;
@@ -76,14 +99,18 @@ body {
     margin: auto
   }
 
+  .filter-container {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
   #stateFilter {
     margin: 10px;
     padding: 5px;
   }
 
-  .filter-container {
-    text-align: center;
-    margin-bottom: 50px;
+  .small-margin {
+    margin-top: 0px;
   }
   
   #map2 {
@@ -92,16 +119,14 @@ body {
     margin: auto
   }
   
-  #visual3,
-  body,
-  html {
-    height: 100%;
+  .visual-container iframe {
+    margin: 10px;
   }
   
-  #visual4,
-  body,
-  html {
-    height: 100%;
+  #map4 {
+    height: 600px;
+    width: 80%;
+    margin: auto
   }
   
   #visual5,
@@ -109,6 +134,7 @@ body {
   html {
     height: 100%;
   }
+
   
 
   .scroll-to-top {

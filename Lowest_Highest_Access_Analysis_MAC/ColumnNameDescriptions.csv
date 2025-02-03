@@ -1,0 +1,44 @@
+﻿Column Name:,Description:
+State,State name
+County ,County Name
+TotalPopulation,Population count from census
+LowAccess_1MUrban_10MRural,Population count beyond 1 mile for urban areas or 10 miles for rural areas from supermarket
+LowAccess_HalfUrban_10MRural,Population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket
+LowAccess_1MUrban_20MRural,Population count beyond 1 mile for urban areas or 20 miles for rural areas from supermarket
+LowAccess_LowInc_1MUrban_10MRural,Low income population count beyond 1 mile for urban areas or 10 miles for rural areas from supermarket
+LowAccess_LowInc_HalfUrban_10MRural,Low income population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket
+LowAccess_LowInc_1MUrban_20MRural,Low income population count beyond 1 mile for urban areas or 20 miles for rural areas from supermarket
+LowAccessTotal_HalfM,Population count beyond 1/2 mile from supermarket
+LowAccess_LowIncTotal_HalfM,Low income population count beyond 1/2 mile from supermarket
+LowAccessWhite_HalfM,White population count beyond 1/2 mile from supermarket
+LowAccessBlack_HalfM,Black or African American population count beyond 1/2 mile from supermarket
+LowAccessAsian_HalfM,Asian population count beyond 1/2 mile from supermarket
+LowAccessNHPI_HalfM,Native Hawaiian or Other Pacific Islander population count beyond 1/2 mile from supermarket
+LowAccessNAAN_HalfM,American Indian or Alaska Native population count beyond 1/2 mile from supermarket
+LowAccessOther_HalfM,Other/Multiple race population count beyond 1/2 mile from supermarket
+LowAccessHispLatam_HalfM,Hispanic or Latino ethnicity population count beyond 1/2 mile from supermarket
+LowAccessSNAP_HalfM,Housing units receiving SNAP benefits count beyond 1/2 mile from supermarket
+LowAccessWhite_1M,White population count beyond 1 mile from supermarket
+LowAccessBlack_1M,Black or African American population count beyond 1 mile from supermarket
+LowAccessAsian_1M,Asian population count beyond 1 mile from supermarket
+LowAccessNHPI_1M,Native Hawaiian or Other Pacific Islander population count beyond 1 mile from supermarket
+LowAccessNAAN_1M,American Indian or Alaska Native population count beyond 1 mile from supermarket
+LowAccessOther_1M,Other/Multiple race population count beyond 1 mile from supermarket
+LowAccessHispLatam_1M,Hispanic or Latino ethnicity population count beyond 1 mile from supermarket
+LowAccessSNAP_1M,Housing units receiving SNAP benefits count beyond 1 mile from supermarket
+LowAccessWhite_10M,White population count beyond 10 miles from supermarket
+LowAccessBlack_10M,Black or African American population count beyond 10 miles from supermarket
+LowAccessAsian_10M,Asian population count beyond 10 miles from supermarket
+LowAccessNHPI_10M,Native Hawaiian or Other Pacific Islander population count beyond 10 miles from supermarket
+LowAccessNAAN_10M,American Indian or Alaska Native population count beyond 10 miles from supermarket
+LowAccessOther_10M,Other/Multiple race population count beyond 10 miles from supermarket
+LowAccessHispLatam_10M,Hispanic or Latino ethnicity population count beyond 10 miles from supermarket
+LowAccessSNAP_10M,Housing units receiving SNAP benefits count beyond 10 miles from supermarket
+TotalPopulationWhite,Total count of White population in tract 
+TotalPopulationBlack,Total count of Black or African American population in tract 
+TotalPopulationAsian,Total count of Asian population in tract 
+TotalPopulationNHPI,Total count of Native Hawaiian and Other Pacific Islander population in tract 
+TotalPopulationNAAN,Total count of American Indian and Alaska Native population in tract 
+TotalPopulationOther,Total count of Other/Multiple race population in tract 
+TotalPopulationHispanicLatam,Total count of Hispanic or Latino population in tract 
+TotalPopulationSnapBenefits,Total count of housing units receiving SNAP benefits in tract 
