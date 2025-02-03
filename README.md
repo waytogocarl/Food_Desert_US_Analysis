@@ -17,12 +17,10 @@ Once data was cleaned and a primary key of County, State was added to the file a
   - We applied iterative color markers to each county to help surface counties with the highest populations; Interactivity features include a mouse hover, which supplies each states' population and % Low Access _(those who live more than 1 mile from a supermarket in an urban area and more than 10 miles from a supermarket in rural areas)._
   - An example of a low-access county is highlighted below, where nearly 25% of residents are considered to be living in a "food desert". 
 Another interactive function is a dropdown menu, which allows users to focus on a specific state of interest, rather than the total US.
+  - To access this visualization, users should open a Local Host using Terminal _command: python -m http.server 8000_
   - **Business Application:** nationwide supermarket brands can use this map as an interactive reference to make informed decisions as to where they should build, focusing on US counties that have a high share of % Low Access, but also large population counts, such as neighborhoods in and around Atlanta Georgia (shown below)
-  - Resources used:
-        - ColorBrewer for heatmap shading: https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3
-        - Leaflet for GEOJSON and mapping: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        - Open Street Map for mapping: <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        - D3 for CSV data reading: "https://d3js.org/d3.v7.min.js"
+  - **Resources used:** ColorBrewer for heatmap shading: https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3; Leaflet for GEOJSON and mapping: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"; Open Street Map for mapping: <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'; D3 for CSV data reading: "https://d3js.org/d3.v7.min.js"
 
+![image](https://github.com/user-attachments/assets/a6e36fce-eb01-4b4d-bce5-bc45d8007769)
 
 
