@@ -35,3 +35,14 @@ This case study also looks at data by individuals' race, which is subject to alg
 As with anything, Personal Bias may come into play for those who use the interactive maps when making business decisions around which areas to build - depending on % low access, race % makeup of total population, and income makeup of the areas they are building.
 
 Additional considerations for data accuracy may be customers willing to answer the census at all, and those who do answer, answering truthfully. An article by the University of Virginia (https://guides.lib.virginia.edu/c.php?g=1357748&p=10025378) highlights the potential for data integrity loss due to changes in data processing post-COVID.
+
+# Visualization 3: Pie Chart on Low Food Access by Race
+  - This visualization was created in Python using Bokeh library. The file connects the CSV database to read it in SQLite so we can make our queries.
+  -  The goal of our visualization is to get the race with the lowest access to food. To do that, we can compare the LowAccess columns by race. We used the CASE statement to check each race and then used an aggregate function like MIN() to find the lowest access within 1/2 mile.
+  -  We then created the Bokeh pie chart using Bokeh base template, and added Custom Title, Hover Tool, Percentage Label, Pie Slice Labels, Legend and improved the General Aesthetics.
+  One example of the pie chart can be seen below:
+
+<img width="662" alt="image" src="https://github.com/user-attachments/assets/ae59bc3a-bd90-4f10-a107-c1d36686bc20" />
+
+- We then queried our database to find the Lowest Food Access by Race within 1 Mile and 10 Miles, and also created a pie chart based on the data found.
+
