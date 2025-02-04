@@ -20,6 +20,7 @@ Once data was cleaned and a primary key of County, State was added to the file a
   - Counties that are considered low-access are surfaced by being in a dark red color, as >25% of residents are considered to be in a "food desert"; counties highlighted with large circles indicate that the county has a high population.
   - To access this visualization, users should open a Local Host using Terminal _command: python -m http.server 8000_
   - **Business Application:** nationwide supermarket brands can use this map as an interactive reference to make informed decisions as to where they should build, focusing on US counties that have a high share of % Low Access, but also large population counts, such as neighborhoods in and around Atlanta Georgia (shown below)
+  - **Personal Application:** potential home buyers or individuals looking to move can use this map to find counties that have strong grocery options, and avoid potential food deserts.
   - **Resources used:** ColorBrewer for heatmap shading: https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3; Leaflet for GEOJSON and mapping: "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"; Open Street Map for mapping: <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'; D3 for CSV data reading: "https://d3js.org/d3.v7.min.js"
 
 ![image](https://github.com/user-attachments/assets/a6e36fce-eb01-4b4d-bce5-bc45d8007769)
