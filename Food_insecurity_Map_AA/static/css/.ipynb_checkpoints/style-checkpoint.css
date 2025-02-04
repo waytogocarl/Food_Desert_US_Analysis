@@ -1,0 +1,36 @@
+ /*<style>
+        /* Fullscreen Map */
+body {
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        
+        /* Tooltip Styling */
+        .info {
+            padding: 8px;
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .legend {
+            background: white;
+            padding: 8px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .legend i {
+            width: 18px;
+            height: 18px;
+            float: left;
+            margin-right: 8px;
+            opacity: 0.8;
+        }
+    /*</style>
