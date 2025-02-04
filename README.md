@@ -25,3 +25,12 @@ Once data was cleaned and a primary key of County, State was added to the file a
 ![image](https://github.com/user-attachments/assets/a6e36fce-eb01-4b4d-bce5-bc45d8007769)
 
 
+# Ethical Considerations for our analysis:
+
+This analysis uses census data, which contains information around individuals' race, income and SNAP benefit status. Individual respondent's information must be kept confidential in the census, as to not reveal financial status. Though the Graham-Leach-Bliley Act is aimed at Financial Institutions, the US Census takes similar steps to protect individual financial data, aggregating low-income and SNAP benefit information on the county level.
+
+This case study also looks at data by individuals' race, which is subject to algorithmic bias should a machine learning algorithm be applied to the data to analyze further.
+
+As with anything, Personal Bias may come into play for those who use the interactive maps when making business decisions around which areas to build - depending on % low access, race % makeup of total population, and income makeup of the areas they are building.
+
+Additional considerations for data accuracy may be customers willing to answer the census at all, and those who do answer, answering truthfully. An article by the University of Virginia (https://guides.lib.virginia.edu/c.php?g=1357748&p=10025378) highlights the potential for data integrity loss due to changes in data processing post-COVID.
