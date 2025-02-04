@@ -24,23 +24,23 @@ d3.csv("data/FoodAccessResearchDataCleanCSV_Updated.csv").then(function (data) {
     data.forEach(row => {
         let lat = parseFloat(row.latitude);
         let lng = parseFloat(row.longitude);
-        let totalPop = parseFloat(row.TotalPopulation);
+        let totalPopulation = parseFloat(row.TotalPopulation);
         let lowAccessPop = parseFloat(row.LowAccess_1MUrban_10MRural);
 
-        if (isNaN(lat) || isNaN(lng) || isNaN(totalPop) || totalPop === 0) {
+        if (isNaN(lat) || isNaN(lng) || isNaN(totalPopulation) || totalPopulation === 0) {
             console.warn("Skipping row due to invalid data:", row);
             return;
         }
 
-        let percentLowAccess = ((lowAccessPop / totalPop) * 100).toFixed(2);
+        let percentLowAccess = ((lowAccessPop / totalPopulation) * 100).toFixed(2);
 
         let feature = {
             "type": "Feature",
             "properties": {
                 "County_State": row.County_State,
                 "State": row.State,
-                "TotalPopulation": totalPop,
-                "PercentLowAccess": percentLowAccess + "%"
+                "TotalPopulation": totalPopulation,
+                "PercentLowAccess": parseFloat(percentLowAccess) // Ensure it's a number
             },
             "geometry": {
                 "type": "Point",
@@ -86,16 +86,26 @@ d3.csv("data/FoodAccessResearchDataCleanCSV_Updated.csv").then(function (data) {
     });
 });
 
-// Function to get color based on population
-function getColor(population) {
-    return population > 1500000 ? '#800026' :
-           population > 1000000  ? '#BD0026' :
-           population > 500000   ? '#E31A1C' :
-           population > 250000   ? '#FC4E2A' :
-           population > 100000   ? '#FD8D3C' :
-           population > 50000    ? '#FEB24C' :
-           population > 25000    ? '#FED976' :
-                                   '#FFEDA0';
+// Function to determine circle marker size based on Total Population
+function getRadius(totalPopulation) {
+    return totalPopulation > 1500000 ? 20 :
+           totalPopulation > 1000000 ? 15 :
+           totalPopulation > 500000  ? 12 :
+           totalPopulation > 250000  ? 10 :
+           totalPopulation > 100000  ? 8 :
+           totalPopulation > 50000   ? 6 :
+           totalPopulation > 25000   ? 4 :
+                                       2;
+}
+
+// Function to get color based on % Low Access// left off here, want to play around with percentages
+function getColor(percentLowAccess) {
+    return percentLowAccess > 25 ? '#800026' :  // > 25%
+           percentLowAccess > 20 ? '#E31A1C' :  // > 20%
+           percentLowAccess > 15 ? '#FED976' :  // > 15%
+           percentLowAccess > 10 ? '#F5F5F5' :  // > 10%
+           percentLowAccess > 5  ? '#a1d76a' :  // > 5%
+                                    '#2ca25f';   // < 5%
 }
 
 // Function to update map with new data
@@ -107,8 +117,8 @@ function updateMap(filteredData) {
     geojsonLayer = L.geoJson(filteredData, {
         pointToLayer: function (feature, latlng) {
             return L.circleMarker(latlng, {
-                radius: 8,
-                fillColor: getColor(feature.properties.TotalPopulation),
+                radius: getRadius(feature.properties.TotalPopulation),  
+                fillColor: getColor(feature.properties.PercentLowAccess), 
                 color: "#000",
                 weight: 1,
                 opacity: 1,
@@ -119,7 +129,7 @@ function updateMap(filteredData) {
             let popupContent = `
                 <strong>${feature.properties.County_State}</strong><br />
                 Total Population: ${feature.properties.TotalPopulation}<br />
-                % Low Access: ${feature.properties.PercentLowAccess}
+                % Low Access: ${feature.properties.PercentLowAccess}%
             `;
 
             layer.bindPopup(popupContent);
