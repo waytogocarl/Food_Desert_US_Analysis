@@ -25,16 +25,12 @@ Once data was cleaned and a primary key of County, State was added to the file a
 
 ![image](https://github.com/user-attachments/assets/a6e36fce-eb01-4b4d-bce5-bc45d8007769)
 
-
-# Ethical Considerations for our analysis:
-
-This analysis uses census data, which contains information around individuals' race, income and SNAP benefit status. Individual respondent's information must be kept confidential in the census, as to not reveal financial status. Though the Graham-Leach-Bliley Act is aimed at Financial Institutions, the US Census takes similar steps to protect individual financial data, aggregating low-income and SNAP benefit information on the county level.
-
-This case study also looks at data by individuals' race, which is subject to algorithmic bias should a machine learning algorithm be applied to the data to analyze further.
-
-As with anything, Personal Bias may come into play for those who use the interactive maps when making business decisions around which areas to build - depending on % low access, race % makeup of total population, and income makeup of the areas they are building.
-
-Additional considerations for data accuracy may be customers willing to answer the census at all, and those who do answer, answering truthfully. An article by the University of Virginia (https://guides.lib.virginia.edu/c.php?g=1357748&p=10025378) highlights the potential for data integrity loss due to changes in data processing post-COVID.
+# Visualization 2: Top 10 Food Deserts in the US
+- This visualization was created in Javascript using Leaflet for the street map view, and D3 for converting the data being stored in the csv file.
+- This visual was constructed with the purpose of exposing the top 10 states with the worst food deserts. In order to accomplish our findings, we located the states with the largest total population where the nearest grocery store is  atleast 10 miles away.
+- Hovering over the markers displays the state name and total population. Clicking on the markers reveals a population break down of the races and/or ethinics that are at least 10 miles away.
+- The geographical coordinates for each of the top 10 states were hardcoded into the Javascript as the result of the datas' latitudes and longitudes being associated on a county and city level.
+- (**INSERT IMAGE OF TOP 10 FOOD DESERT MAP HERE**)
 
 # Visualization 3: Pie Chart on Low Food Access by Race
   - This visualization was created in Python using Bokeh library. The file connects the CSV database to read it in SQLite so we can make our queries.
@@ -45,4 +41,15 @@ Additional considerations for data accuracy may be customers willing to answer t
 <img width="662" alt="image" src="https://github.com/user-attachments/assets/ae59bc3a-bd90-4f10-a107-c1d36686bc20" />
 
 - We then queried our database to find the Lowest Food Access by Race within 1 Mile and 10 Miles, and also created a pie chart based on the data found.
+
+
+# Ethical Considerations for our analysis:
+
+This analysis uses census data, which contains information around individuals' race, income and SNAP benefit status. Individual respondent's information must be kept confidential in the census, as to not reveal financial status. Though the Graham-Leach-Bliley Act is aimed at Financial Institutions, the US Census takes similar steps to protect individual financial data, aggregating low-income and SNAP benefit information on the county level.
+
+This case study also looks at data by individuals' race, which is subject to algorithmic bias should a machine learning algorithm be applied to the data to analyze further.
+
+As with anything, Personal Bias may come into play for those who use the interactive maps when making business decisions around which areas to build - depending on % low access, race % makeup of total population, and income makeup of the areas they are building.
+
+Additional considerations for data accuracy may be customers willing to answer the census at all, and those who do answer, answering truthfully. An article by the University of Virginia (https://guides.lib.virginia.edu/c.php?g=1357748&p=10025378) highlights the potential for data integrity loss due to changes in data processing post-COVID.
 
