@@ -42,6 +42,17 @@ Once data was cleaned and a primary key of County, State was added to the file a
 
 - We then queried our database to find the Lowest Food Access by Race within 1 Mile and 10 Miles, and also created a pie chart based on the data found.
 
+# Visualization 4: Top State with Lowest Access for Minority Populations & Grocery Store Locations by County
+- The queries needed to create this visualization were created in Jupyter Notebook using Python, Pandas, and Sqlite3. Within the notebook we connected to the SQL database we built in order to query the states with the highest minority populations with the least access to supermarkets.
+- It was found that Arizona had the highest minority populations with the least access to supermarkets, having the worst access occuring in 4 counties within the state. We focused on these four counties for the visualization.
+- The visualization uses the filtered data from the Python queries as well as data from GEOJson. The python queries helped us to map the four counties with the least access and provided us with the data needed to show the miniority population counts in these counties. The GEOJson data helped us to map the supermarkets (with a limit of 100 in Urban areas, and a limit of 200 in Rural areas) within these counties.
+- The map was created using Leaflet to show a streetmap view and an API to show the grocery store locations. Within the map you can select or deselect which county you'd like to look closer at, while seeing the supermarkets (within the limit) in that county. You can click on the county to see the minority population counts in these areas. You can click on the markers within the county to show the name and address of the supermarkets.
+- **Business Application:** Small businesses or large corporations could use this map to identify areas that would benefit from the opening of a store and which Races and Ethnicities they would help to serve.
+- **Personal Application:** If you are planning to move to Arizona you could use this map to decide in which county you'd prefer to live based on access to food. If you choose to live in one of these counties you can use the map to help plan which grocery store would be closest to you and how close/far you'd like to live from it.
+
+![Screenshot 2025-02-05 at 5 18 02 PM](https://github.com/user-attachments/assets/9c6889f8-7c70-4f2c-a3f6-dc28ee692266)
+
+
 
 # Ethical Considerations for our analysis:
 
