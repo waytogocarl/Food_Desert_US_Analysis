@@ -30,7 +30,8 @@ Once data was cleaned and a primary key of County, State was added to the file a
 - This visual was constructed with the purpose of exposing the top 10 states with the worst food deserts. In order to accomplish our findings, we located the states with the largest total population where the nearest grocery store is  atleast 10 miles away.
 - Hovering over the markers displays the state name and total population. Clicking on the markers reveals a population break down of the races and/or ethinics that are at least 10 miles away.
 - The geographical coordinates for each of the top 10 states were hardcoded into the Javascript as the result of the datas' latitudes and longitudes being associated on a county and city level.
-- (**INSERT IMAGE OF TOP 10 FOOD DESERT MAP HERE**)
+- ![Top 10 Food Deserts](https://github.com/user-attachments/assets/cc7fd599-8768-4f6b-ab6f-175cd5e38314)
+
 
 # Visualization 3: Pie Chart on Low Food Access by Race
   - This visualization was created in Python using Bokeh library. The file connects the CSV database to read it in SQLite so we can make our queries.
