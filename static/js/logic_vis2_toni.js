@@ -1,4 +1,4 @@
-d3.csv('../../data/us_food_desert.csv').then(data => {
+d3.csv('data/us_food_desert.csv').then(data => {
     // console.log(data); // Display the data in the console
     
     let stateTotals = {} //make object to hold totals per state
