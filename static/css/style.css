@@ -128,11 +128,29 @@ body {
     width: 80%;
     margin: auto
   }
-  
-  #visual5,
-  body,
-  html {
-    height: 100%;
+
+  .custom-popup {
+    font-family: Merriweather;
+    text-align: left;
+    padding: 15px;
+    font-size: 12px;
+    background-color: #B1BAFA;
+    color: #000000
+  }
+
+  .custom-popup b {
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+  }
+
+  .custom-popup li {
+    font-size: 12px;
+    color: #000000;
+  }
+
+  .custom-popup strong {
+    color: #000000
   }
 
   

@@ -15,7 +15,7 @@ let layers = {
 // creating the map object
 let map4 = L.map("map4", {
   center: [34, -115],
-  zoom: 5,
+  zoom: 6,
   layers : [
     layers.Maricopa_County,
     layers.Apache_County,
@@ -65,6 +65,27 @@ const arizonaCounties = [
   }
 ];
 
+//define countyDemographics
+const countyDemographics = {
+  "Apache County": {
+    americanNative: "30,173"
+  },
+  "Coconino County": {
+    americanNative: "13,349",
+    asian: "249"
+  },
+  "Maricopa County": {
+    hispanicLatino: "8,656",
+    nativeHawaiian: "42",
+    asian: "148",
+    africanAmerican: "497",
+    otherMultiples: "5,666",
+    additionalInfo: "397,474"
+  },
+  "Mohave County": {
+    nativeHawaiian: "51"
+  }
+};
 
 //use a bounding box to show all of the stores within that bounding box (aka california or arizona)
 function fetchGroceryStores(countyName, bbox, layerGroup, type) {
@@ -90,7 +111,7 @@ function fetchGroceryStores(countyName, bbox, layerGroup, type) {
 
         // create a marker at the stores location
         L.marker([coordinates[1], coordinates[0]])
-          .bindPopup(`<strong>${name || "Supermarket"}</strong><br><em>${formatted}</em><br><b>County:</br> ${countyName}`)
+          .bindPopup(`<strong>${name || "Supermarket"}</strong><br><em>${formatted}</em>`)
           .addTo(layerGroup);
       });
 
@@ -110,17 +131,52 @@ function drawBoundingBox(bbox, countyName, layerGroup) {
     return;
   }
 
+  //demographics for the county
+  const demographics = countyDemographics[countyName] || {};
+
+  //create an array to store only th fields that have values
+  let popupList = [];
+
+  if (demographics.hispanicLatino) {
+    popupList.push(`<li><strong>Hispanic or Latino Population Count beyond 10 Miles from Supermarket:</strong> ${demographics.hispanicLatino}</li>`)
+  }
+  if (demographics.americanNative) {
+    popupList.push(`<li><strong>American Indian or Alaska Native Population Count beyond 10 Miles from Supermarket:</strong> ${demographics.americanNative}</li>`)
+  }
+  if (demographics.asian) {
+    popupList.push(`<li><strong>Asian Population Count beyond 10 Miles from Supermarket:</strong> ${demographics.asian}</li>`)
+  }
+  if (demographics.nativeHawaiian) {
+    popupList.push(`<li><strong>Native Hawaiian or Other Pacific Islander Population Count beyond 10 Miles from Supermarket:</strong> ${demographics.nativeHawaiian}</li>`)
+  }
+  if (demographics.africanAmerican) {
+    popupList.push(`<li><strong>Black or African American Population Count beyond 10 Miles from Supermarket:</strong> ${demographics.africanAmerican}</li>`)
+  }
+  if (demographics.otherMultiples) {
+    popupList.push(`<li><strong>Other/Multiple race Population Count beyond 10 Miles from Supermarket:</strong> ${demographics.otherMultiples}</li>`)
+  }
+  if (demographics.additionalInfo) {
+    popupList.push(`<li><strong>Population count beyond 1 mile for urban areas or 10 miles for rural areas from Supermarket:</strong> ${demographics.additionalInfo}</li>`)
+  }
+
+  const popupContent = `
+    <div class="custom-popup">
+      <b>${countyName}</b><br>
+      ${popupList.length > 0 ? `<ul>${popupList.join("")}</ul>` : "<p>No Demographic data available.</p>"}
+    </div>
+  `;
+
   const rectangle = L.rectangle([
     [bbox[1], bbox[0]], //southwest corner
     [bbox[3], bbox[2]]
   ], {
-    color: "orange",
+    color: "#b1bafa",
     weight: 2,
     fillOpacity: 0.3
   }).addTo(layerGroup);
 
   //make a popup to show county nae when you click on the box
-  rectangle.bindPopup(`<b>${countyName}</b>`);
+  rectangle.bindPopup(popupContent);
 }
 
 //fetch grocery stores for each county
@@ -131,38 +187,4 @@ arizonaCounties.forEach(county => {
 //create a control for our layers and add our overlays to it
 L.control.layers(null, overlays).addTo(map4);
 
-//create a legend
-let info = L.control({
-  position: "bottomright"
-});
 
-//insert a div with a class of legend
-info.onAdd = function() {
-  let div = L.DomUtil.create("div", "legend");
-  return div;
-};
-
-//add the info legend to the map
-info.addTo(map4);
-
-// map2.on('click', function (e) {
-  //const lat = e.latlng.lat;
-  //const lon = e.latlng.lng;
-
-  //console.log("Fetching grocery stores near:", lat, lon);
-
-  //const url = `https://api.geoapify.com/v2/places?categories=commercial.grocery&bias=proximity:${lon},${lat}&limit=20&apiKey=${apiKey}`;
-
-  //fetch(url)
-      //.then(response => response.json())
-      //.then(data => {
-          //console.log("Geoapify Response:", data);
-          //data.features.forEach(feature => {
-              //const { coordinates } = feature.geometry;
-              //L.marker([coordinates[1], coordinates[0]])
-                  //.bindPopup(`<b>${feature.properties.name}</b>`)
-                  //.addTo(map2);
-          //});
-      //})
-      //.catch(error => console.error("Error fetching grocery store locations:", error));
-//});
